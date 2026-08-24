@@ -1,1 +1,11 @@
-
+#include <stdio.h> 
+#include <stdlib.h> /*Uso do ponto-e-vírgula*/
+int main() /*main escrito com M maiúsculo.
+Troca de posições das parênteses e chaves*/
+{
+printf("Existem %d semanas no ano.", 52); /*Sintaxe incorreta para 
+o printf*/
+/*cout << endl; são elementos de C++*/
+system("PAUSE");
+return 0;
+}
