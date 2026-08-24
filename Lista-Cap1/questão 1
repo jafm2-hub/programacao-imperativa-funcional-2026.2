@@ -3,6 +3,6 @@
 int main()
 {
     int ano = 2026;
-    printf("%d", ano);
+    printf("Estamos no ano de %d", ano);
     return 0;
 }
