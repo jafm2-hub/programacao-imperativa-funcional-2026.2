@@ -1,1 +1,11 @@
+#include <stdio.h>/*Acessar a biblioteca para usar entradas e saídas*/
+#include <stdlib.h> /*Acessar a biblioteca para usar o system*/
+
+int main()/*Função main*/
+{
+    int idade = 18; /* Variável que captura um valor inteiro*/
+    printf("Estamos no ano de %d\n", idade);/*Função printf para enviar mensagens*/
+    system("PAUSE");/*Chama o system para poder confirmar a continuidade do programa*/
+    return 0;
+}/*Final da função Main*/
 
