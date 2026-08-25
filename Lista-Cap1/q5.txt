@@ -1,0 +1,6 @@
+O código não inclui a biblioteca de entrada e saída stdio.h, que é necessária para
+o uso da função printf, e também não inclui a biblioteca stdlib.h, necessária
+para o uso da função system. Além disso, a função main() deveria ser declarada 
+como int main(void), indicando que ela retorna um valor inteiro. Sendo assim, o código
+está incompleto e, dependendo das configurações e do padrão utilizado pelo compilador, poderá
+apresentar avisos ou erros no terminal.
