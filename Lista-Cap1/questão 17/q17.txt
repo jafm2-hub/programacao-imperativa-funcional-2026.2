@@ -1,0 +1,10 @@
+Apenas a letra D está incorreta. O compilador lê normalmente
+as letras A, B e C, apesar dos diferentes espaçamentos. Isso 
+demonstra que o C permite flexibilidade na formatação e nos 
+espaços entre os elementos da instrução, desde que a sintaxe 
+seja respeitada.
+
+a) printf ( "Primeiro programa" );
+b) printf( "Primeiro programa" );
+c) printf("Primeiro programa");
+d) printf "Primeiro programa" ;

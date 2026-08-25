@@ -1,0 +1,4 @@
+Questão 13. No desenvolvimento de programas em C, o que são conceitualmente os
+arquivos de inclusão (headers com extensão .h)?
+
+Resposta: C) Executar e testar as saídas de vídeo diretamente no console de depuração.
