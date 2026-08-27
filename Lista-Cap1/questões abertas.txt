@@ -1,0 +1,145 @@
+QUESTÃO 04
+
+Erros identificados no código original:
+
+1. Havia um ponto-e-vírgula indevido depois de #include <stdlib.h>.
+2. A função principal estava escrita como "Main", com M maiúsculo. Em C, o correto é "main".
+3. Foram usadas chaves "{}" no lugar dos parênteses "()" na declaração da função main.
+4. Faltavam aspas duplas no texto do printf.
+5. "cout << endl" pertence à linguagem C++ e não à linguagem C.
+6. O número 52 pode ser passado diretamente para o %d do printf, não sendo necessár
+
+QUESTÃO 05
+
+O código não inclui a biblioteca de entrada e saída stdio.h, que é necessária para
+o uso da função printf, e também não inclui a biblioteca stdlib.h, necessária
+para o uso da função system. Além disso, a função main() deveria ser declarada 
+como int main(void), indicando que ela retorna um valor inteiro. Sendo assim, o código
+está incompleto e, dependendo das configurações e do padrão utilizado pelo compilador, poderá
+apresentar avisos ou erros no terminal.
+
+QUESTÃO 06
+
+    Ausência do include stdio.h e stdlib.h para utilizar o
+printf e system, além do int na frente do main. As variáveis 
+erradas de acordo com a sintaxe, pois ao invés de vírgulas, 
+foram utilizados ponto-e-virgula para tentar declarar mais de 
+uma variável do mesmo tipo. No printf, um 0 no lugar do O, além
+de uma variável "d" que não foi declarada
+
+
+main()
+{
+int a=1; b=2; c=3:
+printf("0s números são: %d%d%d\n, a, b, c, d);
+system("pause");
+}
+
+QUESTÃO 07
+
+a) printf("\n\tBom dia! Shirley.");
+b) printf("Você já tomou café? \n");
+c) printf("\n\nA solução não existe!\nNão insista.");
+d) printf("Duas\tlinhas\tde\tsaída\nou\tuma?");
+e) printf("%s\n%s\n%s\n", "um", "dois", "três");
+
+
+
+        Bom dia! Shirley.Você já tomou café? 
+
+
+A solução não existe!
+Não insista.um
+dois
+três
+
+QUESTÃO 09
+
+os caracteres puxam os valores respectivos \n, \t e \"
+para serem escritos no texto, assim o texto pula uma linha,
+dá um espaço de tabulação e cria uma aspas na frente do texto, 
+com o mesmo acontecendo em seguida para criar as aspas depois do 
+texto. 
+
+A saída ficará dessa forma:
+
+        "Primeiro programa"Pressione qualquer tecla para continuar. . . 
+
+QUESTÃO 10
+
+Questão 10. A Linguagem C é conhecida por ser sensível a caixa alta e baixa (case sensitive). Explique
+o significado prático desse conceito. Identificadores como 'peso', 'Peso' e 'PESO' representam a mesma
+variável na memória? Assinale a alternativa correta e complemente com sua justificativa:
+
+Respota: B)Verdadeiro (a linguagem C diferencia rigorosamente letras maiúsculas de minúsculas).
+
+A linguagem C é case sensitive, conseguindo diferenciar as letras maiúsculas das minúsculas.
+
+QUESTÃO 11
+
+Constante	    Classificação	                    Tipo base em C
+
+\r	            Sequência de escape	                char
+2130	        Constante inteira decimal	        int
+-123	        Constante inteira decimal	        int
+33.28   	    Constante de ponto flutuante	    double
+0XFA	        Constante inteira hexadecimal	    int
+0101	        Constante inteira octal	            int
+2.0e30	        Constante de ponto flutuante	    double
+\xDC	        Sequência de escape hexadecimal	    char
+'\"'	        Constante de caractere	            char
+'\\'	        Constante de caractere	            char
+'F'	            Constante de caractere	            char
+0	            Constante inteira decimal	        int
+'\0'	        Constante de caractere	            char
+"F"	            Constante string	                char[]
+-4567.89	    Constante de ponto flutuante	    double
+
+QUESTÃO 12
+
+Instrução          Status       Justificativa Teórica
+
+int a;             Correto      declara a variável a como um número inteiro do tipo int.
+float b;           Correto      declara a variável b como um número de ponto flutuante do tipo float.
+double float c;    Incorreto    double e float são tipos distintos e não podem ser usados juntos dessa forma.
+unsigned char d;   Correto      declara d como char sem sinal, permitindo apenas valores não negativos.
+unsigned e;        Correto      unsigned sem outro tipo equivale a unsigned int.
+long float f;      Incorreto    long float não é um tipo válido em C. Para maior precisão, utiliza-se long double.
+long g;            Correto      long sem outro tipo equivale a long int.
+long double h;     Correto      declara h como ponto flutuante do tipo long double, com maior precisão que double.
+
+QUESTÃO 13
+
+Questão 13. No desenvolvimento de programas em C, o que são conceitualmente os
+arquivos de inclusão (headers com extensão .h)?
+
+Resposta: C) Executar e testar as saídas de vídeo diretamente no console de depuração.
+
+QUESTÃO 14
+
+Questão 14. Qual é o papel e o objetivo principal do programador
+ao incluir arquivos de cabeçalho (como <stdio.h>)?
+
+Respota: A) Instruir o compilador a carregar as definições das funções
+da biblioteca padrão antes de compilar o código-fonte.
+
+QUESTÃO 16
+
+Questão 16. As diretivas de pré-processador em C 
+(todas iniciadas com o caractere #) são lidas e interpretadas pelo:
+
+Respota: C)Pré-processador (fase do compilador que altera o programa-fonte
+antes da compilação propriamente dita).
+
+QUESTÃO 17
+
+Apenas a letra D está incorreta. O compilador lê normalmente
+as letras A, B e C, apesar dos diferentes espaçamentos. Isso 
+demonstra que o C permite flexibilidade na formatação e nos 
+espaços entre os elementos da instrução, desde que a sintaxe 
+seja respeitada.
+
+a) printf ( "Primeiro programa" );
+b) printf( "Primeiro programa" );
+c) printf("Primeiro programa");
+d) printf "Primeiro programa" ;
