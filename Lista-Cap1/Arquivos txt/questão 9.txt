@@ -1,9 +1,0 @@
-os caracteres puxam os valores respectivos \n, \t e \"
-para serem escritos no texto, assim o texto pula uma linha,
-dá um espaço de tabulação e cria uma aspas na frente do texto, 
-com o mesmo acontecendo em seguida para criar as aspas depois do 
-texto. 
-
-A saída ficará dessa forma:
-
-        "Primeiro programa"Pressione qualquer tecla para continuar. . . 

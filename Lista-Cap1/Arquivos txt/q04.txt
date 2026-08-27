@@ -1,8 +1,0 @@
-Erros identificados no código original:
-
-1. Havia um ponto-e-vírgula indevido depois de #include <stdlib.h>.
-2. A função principal estava escrita como "Main", com M maiúsculo. Em C, o correto é "main".
-3. Foram usadas chaves "{}" no lugar dos parênteses "()" na declaração da função main.
-4. Faltavam aspas duplas no texto do printf.
-5. "cout << endl" pertence à linguagem C++ e não à linguagem C.
-6. O número 52 pode ser passado diretamente para o %d do printf, não sendo necessário criar uma variável para ele.
