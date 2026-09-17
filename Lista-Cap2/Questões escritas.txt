@@ -1,0 +1,93 @@
+Questão 1
+
+a) 2
+
+
+
+b) Como a variável foi declara como int, as casas decimais não são atribuídas ao número, 
+fazendo assim com que apareça apenas o número inteiro. Esse fenômeno se chama de Conversão 
+Implícita.
+
+
+c) Esse comportamento pode ser evitado utilizando, no lugar do int, o float ou o double, 
+que servem para armazenar números com casas decimais. Caso ele queira arredondar o número,
+ele precisará utilizar a biblioteca <math.h> para conseguir utilizar as funções adequadas 
+para o arredondamento dos números.
+
+
+Questão 2
+
+a)Porque a biblioteca <conio.h> é antiga e proprietária do Windows/DOS, não fazendo parte
+do padrão oficial do C. Por isso, códigos que a utilizam não funcionam em outros sistemas, 
+como Linux e macOS.
+
+b) As funções padrão e portáveis de <stdio.h> para entrada e saída de caracteres são 
+a getchar(), que serve para ler, e a putchar(), que serve para exibir.
+
+
+Questão 4
+
+int a = 1, b = 2, c = 3, d = 4;
+
+int a = 6, b = 6, c = 0, d = 4;
+
+a += b + c; // Valor final de a = 6
+b *= c = d + 2; // Valores finais de b e c = 12 e 6
+d %= a + a + a; // Valor final de d = 4
+d -= c -= b -= a; // Valor final de d, c e b = 4, 0 e 6
+a += b += c += 7; // Valor final de a, b e c = 19, 13 e 7
+
+
+Questão 5
+
+int i = 1, j = 2, k = 3, n = 2; float x = 3.3, y = 4.4;
+
+a) i < j + 3                        => Resultado: 1
+b) 2 * i - 7 <= j - 8               => Resultado: 0
+c) -x + y >= 2.0 * y                => Resultado: 0
+d) x == y                           => Resultado: 0
+e) !(n - j)                         => Resultado: 0
+f) !n - j                           => Resultado: 1
+g) i && j && k                      => Resultado: 1
+h) i || j - 3 && k                  => Resultado: 1
+i) i < j && 2 >= k                  => Resultado: 0
+j) i == 2 || j == 4 || k == 5       => Resultado: 0
+
+
+Questão 6
+
+// Trecho A
+int n = 5;
+int x = ++n;
+printf("Trecho A: n = %d, x = %d\n", n, x);
+
+// Trecho B
+int m = 5;
+int y = m++;
+printf("Trecho B: m = %d, y = %d\n", m, y);
+
+a) Explique a diferença de fluxo e atribuição que ocorre entre o operador prefixado (++n) e o
+pós-fixado (m++). Quais serão os valores impressos na tela por cada trecho?
+
+A diferença é que um adiciona pra depois imprimir, o outro lê e adiciona posteriormente.
+
+Trecho A: n = 6, x = 6
+Trecho B: m = 6, y = 5
+
+
+b) Um programador júnior tentou imprimir uma variável em printf() modificando-a múltiplas
+vezes de forma sequencial na mesma chamada: printf("%d\t%d\t%d\n", n, n+1, n++);. Explique
+por que essa instrução pode gerar resultados inconsistentes e imprevisíveis dependendo do
+compilador adotado (comportamento indefinido).
+
+Causa resultados inesperados porque dentro do printf, as operações são lidas da direita
+para a esquerda, causando um resultado inesperado do que fazendo as operações fora do 
+printf.
+
+
+
+
+
+
+
+
