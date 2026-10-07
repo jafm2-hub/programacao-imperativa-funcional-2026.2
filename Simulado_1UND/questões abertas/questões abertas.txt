@@ -1,0 +1,106 @@
+Questão 01. Sensibilidade a Caixa (Case Sensitivity) e Identificadores em C (Cap. 1) — 
+A linguagem C diferencia rigorosamente letras maiúsculas e minúsculas na formação de 
+nomes de identificadores e palavras-chave. Com base nessa premissa, analise os pares 
+de identificadores abaixo e assinale a alternativa correta:
+
+
+R: c) Todos os pares de nomes ('valor'/'VALOR', 'peso'/'Peso', 'taxa'/'TAXA') representam identificadores
+totalmente distintos para o compilador.
+
+
+
+Questão 02. Especificadores de Formato, Sequências de Escape e Erros de Compilação (Cap. 1)
+— Um estudante iniciante escreveu o código C abaixo tentando imprimir mensagens formatadas com
+quebras de linha e tabulações, mas enfrentou erros de compilação. Identifique os três erros
+sintáticos/estruturais presentes no código:
+
+
+Há um ponto e vírgula no final do #include <stdlib.h>. A função main foi escrita 
+com a inicial maiúscula (Main), mas o compilador exige que o  main seja escrito com 
+m minúsculo. O terceiro erro é no printf, já que a frase e as variáveis estão soltas 
+e precisam obrigatoriamente ficar entre aspas duplas. A linha "cout << endl;" é um comando
+exclusivo de C++ e vai quebrar o código C, então é só apagar.
+
+
+
+Questão 03. Operadores de Atribuição Composta e Avaliação Sequencial (Cap. 2) — Os
+operadores de atribuição em C executam suas ações da direita para a esquerda e podem 
+ser combinados com operadores aritméticos. Determine os valores finais de a, b, c e d 
+após a execução da sequência abaixo:
+
+
+ 
+int a = 2, b = 4, c = 5, d = 10;
+a += b + c; // Valor final de a = 11
+b *= c = d - 2; // Valores finais de b e c = 32 e 8
+d %= a + 3; // Valor final de d = 10
+a += b += c += 5; // Valores finais de a, b e c = 56, 45 e 13
+
+
+Questão 04. Avaliação de Expressões Lógicas, Relacionais e Precedência (Cap. 2) — Considere as
+variáveis inteiras i = 2, j = 3, k = 0 e as variáveis de ponto flutuante x = 2.5, y = 5.0. 
+Avalie cada expressão abaixo e determine seu resultado lógico em C (1 para Verdadeiro, 0 para 
+Falso):
+
+
+a) i < j + 2 => Resultado: 1
+b) 2 * i - 5 <= j - 4 => Resultado: 1
+c) !k && (x + y >= 7.5) => Resultado: 1
+d) !(i == j) || (y / x == 2.0) => Resultado: 1
+e) i == 2 && j == 4 || k == 0 => Resultado: 1
+
+
+Questão 05. Estruturas de Repetição: Comparação entre for, while e do-while (Cap. 3)
+As estruturas de repetição permitem a execução iterativa de instruções em C. Analise 
+as características de for, while e do-while e responda fundamentadamente:
+
+
+a) Qual é a diferença essencial entre while e do-while em relação ao número mínimo de 
+execuções do bloco de código e ao momento do teste condicional? 
+
+O while realiza o teste no início e executa no mínimo 0 vezes; o do-while realiza o 
+teste no final e executa no mínimo 1 vez.
+
+b) Em que cenários o laço for se apresenta como a escolha mais elegante e legível 
+frente ao laço while?
+
+Quando o número de repetições é previamente conhecido ou controlado por contadores.
+
+c) O trecho de código 'while (condicao);' (com ponto-e-vírgula ao final do cabeçalho) 
+constitui um erro de compilação ou de lógica? O que acontece se condicao for verdadeira?
+
+Constitui erro de lógica. Se a condição for verdadeira, o programa entra em loop infinito.
+
+
+Questão 06. Escopo de Bloco e Comandos de Desvio (break e continue) (Cap. 3) — Analise o
+programa abaixo que calcula a soma acumulada de quadrados dentro de um laço for contendo um
+comando de desvio e controle de escopo interno:
+
+
+a) Por que o compilador emitirá um erro de compilação na instrução printf final?
+
+Porque a variável soma foi declarada dentro do bloco do laço for, tornando seu escopo
+local ao laço e inacessível na instrução printf fora dele.
+
+b) Quais iterações do laço serão efetivamente executadas e qual o impacto dos comandos
+continue e break no fluxo?
+
+O corpo do laço processará as iterações i = 1, 2, 3, 4, 6 e 7. O continue pula o 
+processamento da iteração i = 5 e o break interrompe a execução do laço assim que i = 8.
+
+
+c) Reescreva o código corrigindo o escopo de 'soma' e apresente o resultado que será impresso no
+console.
+
+Resposta na pasta Questão 6
+
+
+
+
+
+
+
+
+
+
+
