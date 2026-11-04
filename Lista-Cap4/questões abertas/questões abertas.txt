@@ -1,0 +1,193 @@
+Questão 01. Avaliação de Expressões Condicionais e Atribuição vs. Igualdade — Em relação à
+sintaxe e semântica do comando if na Linguagem C, responda analiticamente:
+
+a) Qual é o efeito prático de escrever if (x = 0) em vez de if (x == 0)? Explique o que 
+acontece com a variável x e qual bloco de código será executado.
+
+no if (x = 0), o if entende que o valor 0 está sendo atribuído ao x, enquanto 
+no if (x == 9) o if verifica se o x é igual ao 0.
+
+
+b) Como a Linguagem C interpreta valores numéricos inteiros ou reais dentro da condição do comando
+if? O que significa um resultado ser avaliado como 'falso' ou 'verdadeiro'?
+
+a linguagem C interpreta valores diferentes de 0 como verdadeiros, sendo assim, todo número 
+diferente de 0 é verdadeiro e o 0 é falso
+
+c) Analise a instrução if (x = -5) e determine se o bloco de código associado será executado ou
+ignorado. Justifique sua resposta com base no padrão ANSI C.
+
+o bloco é executado pois o -5 é atribuído ao x, fazendo com que o if entenda o valor como verdadeiro
+
+
+Questão 02. Associação do Comando else e Aninhamento de Decisões — Analise o trecho de
+código C abaixo que contém estruturas condicionais aninhadas:
+
+a) Qual mensagem será impressa no console ao executar o código acima? Justifique por que a Opção B
+é ou não exibida.
+
+o código primeiro checa se x maior que 10 e depois se y é maior que 10, sendo verdadeiro no primeiro
+e falso no segundo, assim executando o bloco B
+
+Qual é a regra oficial da Linguagem C para associar uma cláusula else a um comando if em códigos
+sem chaves de bloco?
+
+a regra diz que quando não há chaves, o else se junta ao if mais próxima antes dele que não possua
+um else já instaurado.
+
+c) Reescreva o código acima utilizando chaves { } para garantir explicitamente que a Opção B seja
+impressa apenas quando x <= 10.
+-------------------------------
+int x = 15, y = 5;
+if (x > 10)
+{
+    if (y > 10)
+    {
+        printf("Opção A\n");
+    }
+}
+else
+{
+    printf("Opção B\n");
+
+}
+-------------------------------
+
+Questão 03. Operador Condicional Ternário vs. Estrutura if-else — O operador condicional
+ternário (? :) é uma forma concisa de tomada de decisão. Observe a instrução abaixo:
+
+a) Explique detalhadamente o funcionamento da segunda linha de código e qual valor será armazenado
+na variável situacao se media = 6.8.
+
+a variável situacao terá o valor R, pois na condicional ternário, o primeiro valor seria atribuído 
+caso a media >= 7.0 fosse verdadeira, executando o segundo bloco caso a comparação seja falsa.
+
+b) Reescreva o trecho de código acima utilizando obrigatoriamente a estrutura tradicional if-else.
+-------------------------------
+media = (nota1 + nota2) / 2.0;
+if(media >= 7.0)
+{
+    situacao = 'A';
+}
+else
+{
+    situacao = 'R';
+}
+-------------------------------
+
+c) O operador ternário pode substituir qualquer estrutura if-else na Linguagem C? Explique as limitações
+do operador ternário em relação a blocos com múltiplos comandos.
+
+O operador ternário não pode substituir qualquer estrutura do if-else. Sua principal limitação
+é que ele é uma expressão que retorna um valor e não é adequado quando há muitos comandos a serem 
+executados.
+
+Questão 04. Seleção Múltipla com switch-case e Efeito Fall-Through — O comando switch é
+utilizado para seleção entre múltiplas alternativas. Observe o programa a seguir:
+
+a) Escreva a saída exata gerada no terminal ao executar este programa. Explique por que ocorreu mais
+de uma impressão.
+
+SAIDA:
+
+Prata
+Ouro
+
+Ocorreu mais de uma impressão pois nos cases acima não tinham o comando break para poder quebrar o laço
+
+
+b) Qual é o papel da instrução break dentro de um bloco switch-case e qual é o nome do fenômeno que
+ocorre quando ela é omitida?
+
+O break quebra o laço em que está inserido causando o Fall-Through, que no switch-case, faz com que o 
+próximo caso seja executado, causando resultados indesejados na impressão do código.
+
+c) Quais tipos de dados de variáveis ou expressões podem ser utilizados como argumento no comando
+switch (expressão)? É permitido usar float ou double? Justifique.
+
+podem ser usadas caracteres e inteiros nnos laços switchs. Floats e doubles não podem ser usados 
+porque o switch precisa de comparações exatas de igualdade
+
+
+Questão 05. Avaliação de Curto-Circuito em Operadores Lógicos — Os operadores lógicos (&& e
+||) realizam a avaliação de curto-circuito (short-circuit evaluation). Considere as variáveis inteiras 
+a = 0, b = 5, c = 10 e analise o código:
+
+a) Qual será a saída exata impressa pelo comando printf? Observe se o incremento ++b foi executado
+ou ignorado.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           m,,,,,,,,,,,,,,,,,,,nn ç.
+
+SAÍDA: 
+
+a = 0, b = 5, c = 8
+
+O ++b foi ignorado pois (a != 0) é falso, logo o laço já foi quebrado tendo em vista que havia o &&
+dentro da condição do if precisa dos dois valores verdadeiros para o if ser executado
+
+b) Explique o conceito de avaliação de curto-circuito para o operador lógico E (&&) e para o operador
+lógico OU (||).    
+
+uma condição só é válida com o E (&&) se as duas premissas forem verdadeiras, no OU (||), basta apenas 
+uma premissa verdadeira para que a condição seja validada.
+
+c) Qual seria o valor final de b e c se a condição fosse alterada para if (a == 0 || ++b > 5)?
+
+b = 5 e c = 20
+
+
+Questão 06. Construções else-if e Análise Lógica de Intervalos — Um programador escreveu o
+código abaixo para classificar a faixa etária de um indivíduo, mas o programa apresenta comportamento
+inconsistente para certas idades:
+
+
+Questão 06. Construções else-if e Análise Lógica de Intervalos — Um programador escreveu o
+código abaixo para classificar a faixa etária de um indivíduo, mas o programa apresenta comportamento
+inconsistente para certas idades:
+
+a) Qual será a saída do programa para idade = 65? Explique por que múltiplas mensagens são exibidas.
+
+SAÍDA:
+
+Idoso
+Adulto
+Jovem
+
+Várias mensagens são exibidas pois são utilizados vários laços if, sem utilizar o else if após o primeiro if
+
+b) Qual é a diferença fundamental de execução entre uma sequência de comandos if independentes e
+uma cadeia else-if?
+
+quando o primeiro if é executado, os outros else if não executam, assim executando apenas o que está dentro 
+do primeiro if
+
+c) Reescreva o programa utilizando a estrutura elegante e correta else-if para garantir que apenas uma
+categoria seja impressa.
+-------------------------------
+int idade = 25;
+if (idade >= 60)
+{
+    printf("Idoso\n");
+}
+else if (idade >= 18)
+{
+    printf("Adulto\n");
+
+}
+else if (idade >= 12)
+{
+    printf("Jovem\n");
+}
+else
+{
+    printf("Criança\n");
+}
+-------------------------------
+
+
+
+
+
+
+
+
+
+     
