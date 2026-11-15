@@ -1,0 +1,175 @@
+Questão 01. Anatomia de uma Função e o Papel do Protótipo — Observe o programa abaixo:
+
+a) Identifique no código o protótipo, a chamada e a definição da função celsius(). Explique o
+papel de cada uma dessas três etapas.
+
+o protótipo é float celsius(float); e avisa ao compilador a existência da função. a chamada
+é c = celsius(f); que executa a função no código. a definição é float celsius(float fahr) onde 
+fica o bloco de código com a lógica a ser executada.
+
+b) Qual é a função do protótipo para o compilador? O que aconteceria, em termos de
+verificação de parâmetros, se ele fosse omitido e a função fosse definida depois da main()?
+
+o protótipo serve para o compilador validar os parâmetros passados. se omitido, o compilador
+não consegue verificar se os tipos e quantidades estão corretos, o que pode causar erros.
+
+c) Qual é o tipo da função celsius()? Explique por que o tipo de uma função é determinado pelo
+valor retornado e não pelos parâmetros recebidos.
+
+o tipo é float. o tipo é determinado pelo valor retornado pois é esse o dado que a função devolve
+para substituir a chamada no código, os parâmetros são apenas valores de entrada.
+
+
+Questão 02. O Comando return e suas Limitações — Analise os trechos a seguir:
+
+a) Quantos valores uma função em C pode devolver por meio do comando return? O que o
+programador pretendia fazer na função calcular() e por que a abordagem não cumpre esse
+objetivo?
+
+uma função em C só pode devolver um único valor pelo return. o programador tentou retornar a soma e 
+a média ao mesmo tempo, mas a abordagem não funciona porque o return não aceita múltiplos valores, 
+fazendo com que a vírgula retorne apenas o último valor lido.
+
+b) Qual é o efeito do comando return; dentro da função void imprime_mensagem()? Ele é
+obrigatório no final de uma função void? Justifique.
+
+o return; serve para interromper a execução e sair da função imediatamente. ele não é obrigatório no 
+final de uma função void, pois a função já encerra naturalmente ao chegar na sua última chave de fechamento.
+
+c) Reescreva a função calcular() para que ela retorne apenas a média dos três valores. Em
+seguida, crie uma segunda função, separada, que retorne apenas a soma. Explique por que,
+em C, precisamos de duas funções para devolver dois resultados diferentes quando usamos
+apenas o comando return.
+-------------------------------
+int calcular_media(int a, int b, int c)
+{
+return (a + b + c) / 3;
+}
+-------------------------------
+precisamos de duas funções porque o comando return só consegue devolver um único valor por chamada. como 
+queremos receber dois resultados diferentes, a única forma usando apenas return é separando os cálculos 
+em duas funções independentes.
+
+Questão 03. Funções void, Parâmetros e Assinaturas — Considere os três protótipos
+abaixo:
+
+a) Classifique cada protótipo quanto à existência de parâmetros de entrada e de valor de
+retorno.
+
+o exibe_mensagem possui parâmetro de entrada e não possui retorno (void). o obter_codigo possui retorno 
+(int) e não possui parâmetros de entrada. o limpar_tela não possui parâmetros de entrada nem retorno.
+
+b) Qual é a diferença prática entre uma função com retorno e um procedimento (função void)?
+Dê um exemplo de situação em que cada um é a escolha mais adequada.
+
+a função com retorno devolve um valor que pode ser armazenado em uma variável, enquanto a void apenas 
+executa comandos sem devolver nada. o retorno é ideal para realizar um cálculo e devolver o resultado, 
+já a void é ideal para imprimir um menu na tela.
+
+c) Uma chamada como x = limpar_tela(); é válida? Justifique com base no tipo da função.
+
+não é válida, pois a função limpar_tela é do tipo void, ou seja, ela não devolve nenhum valor para ser 
+atribuído à variável x.
+
+Questão 04. Recursão: Caso Base, Passo Recursivo e Pilha de Execução — Analise a
+função recursiva:
+
+a) Identifique o caso base e o passo recursivo. O que aconteceria se o caso base fosse
+removido?
+
+o caso base é a condição (n == 0) que retorna 1. o passo recursivo é a multiplicação n * fatorial(n - 1). 
+se o caso base fosse removido, a função chamaria a si mesma infinitamente e a memória estouraria.
+
+b) Faça o rastreamento completo da chamada fatorial(4), mostrando a fase de empilhamento e
+a fase de desempilhamento, com o valor devolvido por cada chamada.
+
+empilhamento:
+fatorial(4) = 4 * fatorial(3)
+fatorial(3) = 3 * fatorial(2)
+fatorial(2) = 2 * fatorial(1)
+fatorial(1) = 1 * fatorial(0)
+fatorial(0) = 1
+
+desempilhamento:
+fatorial(0) retorna 1
+fatorial(1) retorna 1 * 1 = 1
+fatorial(2) retorna 2 * 1 = 2
+fatorial(3) retorna 3 * 2 = 6
+fatorial(4) retorna 4 * 6 = 24
+
+c) Explique, em termos de pilha de execução, o que acontece na memória a cada chamada
+recursiva e por que uma recursão sem caso base pode causar falha no programa.
+
+a cada chamada recursiva, um novo bloco de memória é empilhado na pilha de execução para guardar as variáveis 
+e o endereço de retorno daquela chamada. sem um caso base, o programa empilha blocos infinitamente até esgotar 
+o espaço, causando o erro de stack overflow (estouro de pilha).
+
+Questão 05. Diretiva #define, Constantes e Macros com Argumentos — Analise o código:
+
+a) Qual será a saída de cada printf? Explique por que SQR e DOBRO se comportam de maneira
+diferente, relacionando o resultado ao uso de parênteses de proteção.
+
+SAÍDA:
+
+25
+8
+
+o SQR resulta em 25 porque os parênteses de proteção garantem que a soma seja feita antes da multiplicação: 
+((2+3)(2+3)). o DOBRO resulta em 8 porque não possui os parênteses, fazendo com que a multiplicação ocorra 
+antes da adição devido às regras matemáticas: 2+32.
+
+b) Por que a diretiva #define não termina com ponto e vírgula? Por que, por convenção,
+usamos identificadores em maiúsculas?
+
+a diretiva não tem ponto e vírgula porque é um comando de substituição de texto do pré-processador e não uma 
+instrução da linguagem C, se tivesse, o ponto e vírgula seria inserido no meio do código causando erros. 
+maiúsculas são usadas por convenção para diferenciar facilmente as macros e constantes das variáveis normais.
+
+c) Explique por que #define PRN (n) printf("%d", n) está incorreto e qual é a forma correta.
+Aponte também uma diferença entre uma macro com argumentos e uma função comum.
+
+está incorreto por causa do espaço entre o nome PRN e o parêntese (n), fazendo o pré-processador entender que 
+(n) faz parte da substituição. a forma correta é #define PRN(n) printf("%d", n). a principal diferença é que a 
+macro faz apenas substituição de texto cega antes da compilação, enquanto a função possui verificação de tipos 
+e cria um escopo na memória durante a execução.
+
+Questão 06. Diretivas #include, #undef e Compilação Condicional — Considere o trecho:
+
+a) Qual é a diferença entre #include <stdio.h> e #include "areas.h"? Em que situação usamos
+cada sintaxe?
+
+o #include <stdio.h> busca o arquivo nos diretórios padrão do compilador, sendo usado para bibliotecas padrão 
+da linguagem. o #include "areas.h" busca o arquivo primeiro no diretório atual do projeto, sendo usado para 
+arquivos criados pelo próprio programador.
+
+b) Qual é o efeito de #undef SOMA? Por que a forma #undef SOMA(x,y) está incorreta?
+
+o #undef SOMA anula a definição da macro, fazendo com que ela deixe de existir no código a partir daquela linha.
+ a forma com (x,y) está incorreta porque o comando #undef exige apenas o nome do identificador da macro para 
+removê-la, sem incluir seus parâmetros.
+
+c) Se DEBUG não foi definido, qual mensagem será impressa? Explique em que momento (pré-
+processamento ou execução) essa decisão é tomada e por que as diretivas não aparecem no
+executável final.
+
+SAÍDA:
+Modo normal
+
+a decisão é tomada no momento do pré-processamento. as diretivas não aparecem no executável final porque o 
+pré-processador serve apenas para editar o texto do código-fonte (incluindo ou excluindo trechos) antes de 
+entregá-lo ao compilador, que vai gerar o código de máquina apenas com as instruções em C que sobraram.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
